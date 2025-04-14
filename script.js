@@ -65,91 +65,73 @@ const counters = document.querySelectorAll('.counter');
   observer.observe(aboutSection);
 
   // Review
-  // ✅ Create the Supabase client safely
-const client = supabase.createClient(
-  "https://fydlohqmrbopoiaesqig.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5ZGxvaHFtcmJvcG9pYWVzcWlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ2MDgwMTgsImV4cCI6MjA2MDE4NDAxOH0.SZCTMH6EFxR6Gz4i8mCTayFaDsGt_Q6CJYlI1SP5WKk"
-);
-
-const container = document.getElementById("reviews-container");
-const form = document.getElementById("review-form");
-
-// Load existing reviews
-async function loadReviews() {
-  container.innerHTML = ""; // Clear existing reviews
-
-  const { data, error } = await client
-    .from("finance_reviews")
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  if (error) {
-    console.error("Error loading reviews:", error);
-    return;
+  const container = document.getElementById("reviews-container");
+  const form = document.getElementById("review-form");
+  
+  // Load existing reviews
+  async function loadReviews() {
+    container.innerHTML = ""; // Clear existing reviews
+  
+    const res = await fetch("/api/reviews");
+    const data = await res.json();
+  
+    data.forEach((review) => {
+      const card = document.createElement("div");
+      card.className = "review-card";
+  
+      // Format the timestamp as "14 April 2025, 10:30 AM"
+      const reviewDate = new Date(review.created_at);
+      const formattedDate = reviewDate.toLocaleDateString('en-GB', { 
+        day: '2-digit', 
+        month: 'long', 
+        year: 'numeric' 
+      });
+  
+      const formattedTime = reviewDate.toLocaleTimeString('en-GB', { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        hour12: true 
+      });
+  
+      card.innerHTML = `
+        <h4>${review.name}</h4>
+        <div class="rating">${"⭐".repeat(review.rating)}</div>
+        <p>${review.review}</p>
+        <span class="review-date">${formattedDate}, ${formattedTime}</span>
+      `;
+  
+      container.appendChild(card);
+    });
   }
-
-  data.forEach((review) => {
-    const card = document.createElement("div");
-    card.className = "review-card";
-
-    // Format the timestamp as "14 April 2025, 10:30 AM"
-    const reviewDate = new Date(review.created_at);
-    const formattedDate = reviewDate.toLocaleDateString('en-GB', { 
-      day: '2-digit', 
-      month: 'long', 
-      year: 'numeric' 
+  
+  // Handle form submission
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+  
+    const name = document.getElementById("name").value.trim();
+    const review = document.getElementById("review").value.trim();
+    const rating = parseInt(document.getElementById("rating").value);
+  
+    if (!name || !review || !rating) {
+      alert("All fields are required!");
+      return;
+    }
+  
+    const res = await fetch("/api/review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, review, rating }),
     });
-
-    // Format the time as "10:30 AM"
-    const formattedTime = reviewDate.toLocaleTimeString('en-GB', { 
-      hour: '2-digit', 
-      minute: '2-digit', 
-      hour12: true 
-    });
-
-    card.innerHTML = `
-      <h4>${review.name}</h4>
-      <div class="rating">${"⭐".repeat(review.rating)}</div>
-      <p>${review.review}</p>
-      <span class="review-date">${formattedDate}, ${formattedTime}</span> <!-- Add date and time here -->
-    `;
-
-    container.appendChild(card);
+  
+    if (!res.ok) {
+      alert("Something went wrong. Try again.");
+      return;
+    }
+  
+    form.reset();
+    loadReviews(); // Refresh list
   });
-}
-
-
-
-// Handle form submission
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const review = document.getElementById("review").value.trim();
-  const rating = parseInt(document.getElementById("rating").value);
-
-  if (!name || !review || !rating) {
-    alert("All fields are required!");
-    return;
-  }
-
-  const { error } = await client.from("finance_reviews").insert([
-    {
-      name,
-      review,
-      rating,
-    },
-  ]);
-
-  if (error) {
-    console.error("Failed to submit:", error);
-    alert("Something went wrong. Try again.");
-    return;
-  }
-
-  form.reset();
-  loadReviews(); // Refresh list
-});
-
-// Load reviews on page load
-window.onload = loadReviews;
+  
+  // Load reviews on page load
+  window.onload = loadReviews;
+  

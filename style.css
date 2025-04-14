@@ -230,17 +230,13 @@ main {
 .services-section {
   padding: 3rem 1.5rem;
   background-color: #f9f9f9;
-
   text-align: center;
 }
+
 /* .services-section .section-title {
   font-size: 2rem !important;
 
 } */
- 
-
-
-
 .services-container {
   display: grid;
   gap: 2rem;
@@ -253,10 +249,10 @@ main {
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
-  a{
-    text-decoration: none;
-    color: #ffffff;
-  }
+}
+.service-card a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .service-card:hover {
@@ -298,7 +294,6 @@ main {
   background-color: #043b6e;
 }
 
-
 /* About */
 .about-section {
   padding: 3rem 1.5rem;
@@ -312,17 +307,20 @@ main {
   align-items: center;
   gap: 2rem;
 }
-.founder-image{
+
+.founder-image {
   display: flex;
-justify-content: center;
-align-items: center;
-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
+
 .founder-image img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -353,6 +351,7 @@ gap: 10px;
 .counter-box p {
   color: #6E6E6E;
 }
+
 /*  Contact */
 #contact {
   padding: 4rem 1rem;
@@ -371,8 +370,6 @@ gap: 10px;
   border-radius: 10px;
   animation: zoomMap 5s ease-in-out infinite;
 }
-
-
 
 form {
   display: flex;
@@ -426,9 +423,6 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
   min-width: 250px;
   scroll-snap-align: start;
-  
-
-
 }
 
 #review-form {
@@ -466,5 +460,37 @@ button:hover {
   }
   .overlay {
     display: none;
+  }
+  .hero-content {
+    position: relative;
+  }
+  .hero-content h1 {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-size: 5rem;
+    white-space: nowrap;
+  }
+  .hero-content .hero-img img {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 500px !important;
+    height: 500px !important;
+  }
+  .hero-content h2 {
+    position: absolute;
+    top: 40%;
+    left: 21%;
+  }
+  .hero-content h3 {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+  }
+  .hero-content .btn {
+    position: absolute;
+    top: 60%;
+    left: 21%;
   }
 }/*# sourceMappingURL=style.css.map */
