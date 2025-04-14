@@ -63,57 +63,45 @@ const counters = document.querySelectorAll('.counter');
 
   const aboutSection = document.querySelector('.about-section');
   observer.observe(aboutSection);
+// Initialize Supabase
 
-  const container = document.getElementById("reviews-container");
+
+import { getReviews, submitReview } from './review.js';
+
+const container = document.getElementById("reviews-container");
 const form = document.getElementById("review-form");
+
 async function loadReviews() {
-  const container = document.getElementById("reviews-container");
-  container.innerHTML = ""; // Clear existing reviews
-
+  container.innerHTML = "";
   try {
-    const res = await fetch("/api/review"); // Adjust URL if needed
-    const data = await res.json();
+    const data = await getReviews();
+    data.forEach((review) => {
+      const card = document.createElement("div");
+      card.className = "review-card";
 
-    console.log(data); // Log the response to verify the structure
-
-    if (Array.isArray(data)) {
-      data.forEach((review) => {
-        const card = document.createElement("div");
-        card.className = "review-card";
-
-        // Format the timestamp as "14 April 2025, 10:30 AM"
-        const reviewDate = new Date(review.created_at);
-        const formattedDate = reviewDate.toLocaleDateString('en-GB', { 
-          day: '2-digit', 
-          month: 'long', 
-          year: 'numeric' 
-        });
-
-        const formattedTime = reviewDate.toLocaleTimeString('en-GB', { 
-          hour: '2-digit', 
-          minute: '2-digit', 
-          hour12: true 
-        });
-
-        card.innerHTML = `
-          <h4>${review.name}</h4>
-          <div class="rating">${"⭐".repeat(review.rating)}</div>
-          <p>${review.review}</p>
-          <span class="review-date">${formattedDate}, ${formattedTime}</span>
-        `;
-
-        container.appendChild(card);
+      const reviewDate = new Date(review.created_at);
+      const formattedDate = reviewDate.toLocaleDateString('en-GB', {
+        day: '2-digit', month: 'long', year: 'numeric'
       });
-    } else {
-      console.error("Expected an array but received:", data);
-    }
+      const formattedTime = reviewDate.toLocaleTimeString('en-GB', {
+        hour: '2-digit', minute: '2-digit', hour12: true
+      });
+
+      card.innerHTML = `
+        <h4>${review.name}</h4>
+        <div class="rating">${"⭐".repeat(review.rating)}</div>
+        <p>${review.review}</p>
+        <span class="review-date">${formattedDate}, ${formattedTime}</span>
+      `;
+
+      container.appendChild(card);
+    });
   } catch (error) {
     console.error("Error loading reviews:", error);
   }
 }
 
-// Handle form submission
-document.getElementById("review-form").addEventListener("submit", async (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
@@ -125,22 +113,15 @@ document.getElementById("review-form").addEventListener("submit", async (e) => {
     return;
   }
 
-  const res = await fetch("/api/review", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, review, rating }),
-  });
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    alert("Something went wrong. Try again.");
-    return;
+  try {
+    await submitReview(name, review, rating);
+    form.reset();
+    loadReviews();
+  } catch (error) {
+    console.error("Submit error:", error);
+    alert("Failed to submit review.");
   }
-
-  document.getElementById("review-form").reset(); // Clear the form
-  loadReviews(); // Refresh the list of reviews
 });
 
-// Load reviews on page load
 window.onload = loadReviews;
+
