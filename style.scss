@@ -457,6 +457,26 @@ button:hover {
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+/* Webkit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #054A88;
+  border-radius: 6px;
+  border: 3px solid #f1f1f1; /* creates padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
   
