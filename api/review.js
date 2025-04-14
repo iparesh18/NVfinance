@@ -16,16 +16,15 @@ export default async function handler(req, res) {
       });
 
       const data = await response.json();
-      
-      // Handle case where data might not be an array
-      if (!Array.isArray(data)) {
-        return res.status(500).json({ error: "Invalid response from Supabase." });
-      }
 
-      res.status(200).json(data);
+      if (Array.isArray(data)) {
+        res.status(200).json(data);
+      } else {
+        res.status(500).json({ error: "Invalid response from Supabase" });
+      }
     } catch (error) {
       console.error("Error fetching reviews:", error);
-      res.status(500).json({ error: "Failed to fetch reviews." });
+      res.status(500).json({ error: "Failed to fetch reviews.", details: error.message });
     }
   }
 
@@ -50,7 +49,7 @@ export default async function handler(req, res) {
       const data = await response.json();
 
       if (!response.ok) {
-        return res.status(500).json({ error: "Failed to submit review.", details: data });
+        return res.status(500).json({ error: "Failed to submit review", details: data });
       }
 
       res.status(200).json(data);

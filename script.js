@@ -66,52 +66,54 @@ const counters = document.querySelectorAll('.counter');
 
   const container = document.getElementById("reviews-container");
 const form = document.getElementById("review-form");
-
-// Load existing reviews
 async function loadReviews() {
+  const container = document.getElementById("reviews-container");
   container.innerHTML = ""; // Clear existing reviews
 
-  const res = await fetch("/api/review"); // Adjust URL if needed
-  const data = await res.json();
+  try {
+    const res = await fetch("/api/review"); // Adjust URL if needed
+    const data = await res.json();
 
-  console.log(data); // Log the response to verify the structure
+    console.log(data); // Log the response to verify the structure
 
-  // Ensure that data is an array
-  if (Array.isArray(data)) {
-    data.forEach((review) => {
-      const card = document.createElement("div");
-      card.className = "review-card";
+    if (Array.isArray(data)) {
+      data.forEach((review) => {
+        const card = document.createElement("div");
+        card.className = "review-card";
 
-      // Format the timestamp as "14 April 2025, 10:30 AM"
-      const reviewDate = new Date(review.created_at);
-      const formattedDate = reviewDate.toLocaleDateString('en-GB', { 
-        day: '2-digit', 
-        month: 'long', 
-        year: 'numeric' 
+        // Format the timestamp as "14 April 2025, 10:30 AM"
+        const reviewDate = new Date(review.created_at);
+        const formattedDate = reviewDate.toLocaleDateString('en-GB', { 
+          day: '2-digit', 
+          month: 'long', 
+          year: 'numeric' 
+        });
+
+        const formattedTime = reviewDate.toLocaleTimeString('en-GB', { 
+          hour: '2-digit', 
+          minute: '2-digit', 
+          hour12: true 
+        });
+
+        card.innerHTML = `
+          <h4>${review.name}</h4>
+          <div class="rating">${"⭐".repeat(review.rating)}</div>
+          <p>${review.review}</p>
+          <span class="review-date">${formattedDate}, ${formattedTime}</span>
+        `;
+
+        container.appendChild(card);
       });
-
-      const formattedTime = reviewDate.toLocaleTimeString('en-GB', { 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        hour12: true 
-      });
-
-      card.innerHTML = `
-        <h4>${review.name}</h4>
-        <div class="rating">${"⭐".repeat(review.rating)}</div>
-        <p>${review.review}</p>
-        <span class="review-date">${formattedDate}, ${formattedTime}</span>
-      `;
-
-      container.appendChild(card);
-    });
-  } else {
-    console.error("Expected array, but got:", data);
+    } else {
+      console.error("Expected an array but received:", data);
+    }
+  } catch (error) {
+    console.error("Error loading reviews:", error);
   }
 }
 
 // Handle form submission
-form.addEventListener("submit", async (e) => {
+document.getElementById("review-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
@@ -129,13 +131,15 @@ form.addEventListener("submit", async (e) => {
     body: JSON.stringify({ name, review, rating }),
   });
 
+  const data = await res.json();
+
   if (!res.ok) {
     alert("Something went wrong. Try again.");
     return;
   }
 
-  form.reset();
-  loadReviews(); // Refresh list of reviews
+  document.getElementById("review-form").reset(); // Clear the form
+  loadReviews(); // Refresh the list of reviews
 });
 
 // Load reviews on page load
