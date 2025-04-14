@@ -72,7 +72,7 @@ const counters = document.querySelectorAll('.counter');
   async function loadReviews() {
     container.innerHTML = ""; // Clear existing reviews
   
-    const res = await fetch("/api/reviews");
+    const res = await fetch("/api/review");
     const data = await res.json();
   
     data.forEach((review) => {
