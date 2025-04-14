@@ -20,7 +20,12 @@ export default async function handler(req, res) {
     }
 
     if (req.method === "POST") {
-      const { name, review, rating } = req.body;
+      const buffers = [];
+      for await (const chunk of req) {
+        buffers.push(chunk);
+      }
+      const rawBody = Buffer.concat(buffers).toString();
+      const { name, review, rating } = JSON.parse(rawBody);
 
       if (!name || !review || !rating) {
         return res.status(400).json({ error: "Missing fields" });
@@ -39,7 +44,7 @@ export default async function handler(req, res) {
       const data = await response.json();
 
       if (!response.ok) {
-        console.error("Supabase POST error:", data); // <-- This will tell us the exact issue
+        console.error("Supabase POST error:", data);
         return res.status(500).json({ error: "Failed to insert review", details: data });
       }
 
