@@ -125,3 +125,29 @@ form.addEventListener("submit", async (e) => {
 
 window.onload = loadReviews;
 
+window.onload = () => {
+  let percentage = 0;
+  const loader = document.getElementById('loader');
+  const percentageText = document.getElementById('percentage');
+  
+  // Show loader
+  loader.style.display = 'flex';
+
+  // Increase percentage from 0 to 100
+  const interval = setInterval(() => {
+    percentage += 1;
+    percentageText.textContent = `${percentage}%`;
+
+    if (percentage >= 100) {
+      clearInterval(interval);
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 1000); // Delay the removal after fade
+      }, 500); // After reaching 100%, wait before fading out
+    }
+  }, 30); // Controls the speed of the loader
+};
+
+

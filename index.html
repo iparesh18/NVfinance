@@ -8,6 +8,18 @@
     <link rel="icon" href="/assets/images/logo.jpg" type="image/x-icon">
   </head>
   <body>
+    <div id="loader" class="loader">
+      <h1>NV Finance Solution</h1>
+      <p>Your dream finance partner.</p>
+      <div id="progress-container">
+        
+        <span id="percentage">0%</span>
+      </div>
+    </div>
+    
+    
+    
+    
     <main>
       <!-- Navbar -->
       <header>
@@ -76,7 +88,9 @@
           💰Our Services
         </h5>
         <div class="services-container">
+          
           <div class="service-card">
+            <div class="moving-dot"></div> <!-- Add the moving dot here -->
             <img
               src="assets/images/home-loan_2024-11-26-08-56-07-069.svg"
               alt="Home Loan"
@@ -87,8 +101,9 @@
             </p>
             <button><a href="#contact">Contact us</a></button>
           </div>
-
+      
           <div class="service-card">
+            <div class="moving-dot"></div> <!-- Add the moving dot here -->
             <img
               src="assets/images/personal-loan_2024-11-26-08-20-13-195.svg"
               alt="Personal loan"
@@ -100,30 +115,25 @@
             </p>
             <button><a href="#contact">Contact us</a></button>
           </div>
-          <div
-          class="service-card"
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-          "
-        >
-          <img
-            src="assets/images/secured-business-loan_2024-11-26-08-22-18-993.svg"
-            alt="ITR Filing"
-          />
-          <h3>Business Loan</h3>
-          <p>
-            Power your business with customized loan solutions tailored for
-            growth.
-            
-          </p>
-          <button style="margin-top: 1rem">
-            <a href="#contact">Contact us</a>
-          </button>
-        </div>
+          
+          <div class="service-card" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <div class="moving-dot"></div> <!-- Add the moving dot here -->
+            <img
+              src="assets/images/secured-business-loan_2024-11-26-08-22-18-993.svg"
+              alt="ITR Filing"
+            />
+            <h3>Business Loan</h3>
+            <p>
+              Power your business with customized loan solutions tailored for
+              growth.
+            </p>
+            <button style="margin-top: 1rem">
+              <a href="#contact">Contact us</a>
+            </button>
+          </div>
+          
           <div class="service-card">
+            <div class="moving-dot"></div> <!-- Add the moving dot here -->
             <img
               src="assets/images/loan-against-property_2024-11-26-08-21-10-273.svg"
               alt="ITR Filing"
@@ -135,9 +145,10 @@
             </p>
             <button><a href="#contact">Contact us</a></button>
           </div>
-        
+          
         </div>
       </section>
+      
       <section class="services-section" id="service">
         <h2
           class="section-title"
