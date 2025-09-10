@@ -402,67 +402,110 @@ button:hover {
 }
 
 /* Review */
+.reviews-section {
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+}
+
+.reviews-section .heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviews-section .heading h2 {
+  font-size: 1.5rem;
+  color: #054a88;
+  margin-top: 1rem;
+  text-align: center;
+}
+
 .reviews-slider {
   display: flex;
-  overflow-x: auto;
   gap: 1rem;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-  margin-left: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem;
+}
+
+.reviews-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reviews-slider::-webkit-scrollbar-thumb {
+  background: #054a88;
+  border-radius: 5px;
 }
 
 .review-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  flex-direction: column;
-  background: #054A88;
-  color: #fff;
+  min-width: 220px;
+  max-width: 280px;
+  background: #fff;
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-  min-width: 250px;
-  scroll-snap-align: start;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
-#review-form {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 400px;
-  margin-inline: auto;
+.review-card:hover {
+  transform: translateY(-3px);
 }
 
-#review-form input,
-#review-form textarea,
-#review-form select,
-#review-form button {
-  padding: 0.7rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.review-card h4 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #054a88;
 }
 
-/* Webkit browsers */
-::-webkit-scrollbar {
-  width: 12px;
+.review-card .rating {
+  color: gold;
+  margin-bottom: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 6px;
+.review-card p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #054A88;
-  border-radius: 6px;
-  border: 3px solid #f1f1f1; /* creates padding around thumb */
+.review-card .review-date {
+  font-size: 0.75rem;
+  color: #777;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+/* 📱 Tablet */
+@media (min-width: 768px) {
+  .reviews-section {
+    padding: 3rem 2rem;
+  }
+  .reviews-section .heading h2 {
+    font-size: 2rem;
+  }
+  .review-card {
+    min-width: 260px;
+    max-width: 320px;
+    padding: 1.2rem;
+  }
+  .review-card h4 {
+    font-size: 1.1rem;
+  }
+  .review-card p {
+    font-size: 1rem;
+  }
 }
-
+/* 💻 Desktop */
+@media (min-width: 1024px) {
+  .reviews-slider {
+    justify-content: center;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+  }
+  .review-card {
+    flex: 1 1 300px;
+    margin: 0.5rem;
+  }
+}
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 /* Desktop View*/
 @media screen and (min-width: 1080px) {

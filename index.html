@@ -4,22 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NV Finance Solution</title>
+    <meta name="description" content="Get loans, investments, and financial solutions from NV Finance Solution in Ahmedabad. Trusted experts with transparent services.">
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="/assets/images/logo.jpg" type="image/x-icon">
+    <link rel="icon" href="/assets/images/logo.jpg" type="image/x-icon" />
   </head>
   <body>
     <div id="loader" class="loader">
       <h1>NV Finance Solution</h1>
       <p>Your dream finance partner.</p>
       <div id="progress-container">
-        
         <span id="percentage">0%</span>
       </div>
     </div>
-    
-    
-    
-    
+
     <main>
       <!-- Navbar -->
       <header>
@@ -88,9 +85,9 @@
           💰Our Services
         </h5>
         <div class="services-container">
-          
           <div class="service-card">
-            <div class="moving-dot"></div> <!-- Add the moving dot here -->
+            <div class="moving-dot"></div>
+            <!-- Add the moving dot here -->
             <img
               src="assets/images/home-loan_2024-11-26-08-56-07-069.svg"
               alt="Home Loan"
@@ -101,9 +98,10 @@
             </p>
             <button><a href="#contact">Contact us</a></button>
           </div>
-      
+
           <div class="service-card">
-            <div class="moving-dot"></div> <!-- Add the moving dot here -->
+            <div class="moving-dot"></div>
+            <!-- Add the moving dot here -->
             <img
               src="assets/images/personal-loan_2024-11-26-08-20-13-195.svg"
               alt="Personal loan"
@@ -115,9 +113,18 @@
             </p>
             <button><a href="#contact">Contact us</a></button>
           </div>
-          
-          <div class="service-card" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <div class="moving-dot"></div> <!-- Add the moving dot here -->
+
+          <div
+            class="service-card"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+            "
+          >
+            <div class="moving-dot"></div>
+            <!-- Add the moving dot here -->
             <img
               src="assets/images/secured-business-loan_2024-11-26-08-22-18-993.svg"
               alt="ITR Filing"
@@ -131,9 +138,10 @@
               <a href="#contact">Contact us</a>
             </button>
           </div>
-          
+
           <div class="service-card">
-            <div class="moving-dot"></div> <!-- Add the moving dot here -->
+            <div class="moving-dot"></div>
+            <!-- Add the moving dot here -->
             <img
               src="assets/images/loan-against-property_2024-11-26-08-21-10-273.svg"
               alt="ITR Filing"
@@ -145,10 +153,9 @@
             </p>
             <button><a href="#contact">Contact us</a></button>
           </div>
-          
         </div>
       </section>
-      
+
       <section class="services-section" id="service">
         <h2
           class="section-title"
@@ -245,7 +252,7 @@
           <div class="map-container">
             <iframe
               class="map"
-              src="https://www.google.com/maps?q=2nd%20Floor,%20Shakti%20Vijay%20Society,%20Nr%20Vijay%20Park%20Cross%20Road,%20Opp%20Delux%20Pan%20Parlor,%20Krishna%20Nagar,%20Ahmedabad,%20Gujarat%20382350&output=embed"
+              src="https://www.google.com/maps?q=B434%20Pushpak%20corner%20opp%20navyung%20school,%20nr%20kudrat%20residency,%20Parashuram%20Circle,%20naroda,%20Ahmedabad&output=embed"
               width="100%"
               height="250"
               style="border: 0"
@@ -254,8 +261,7 @@
             >
             </iframe>
             <h3 style="font-size: 1rem; margin-top: 1rem">
-              2nd Floor, Shakti Vijay Society, Nr Vijay Park Cross Road, Opp
-              Delux Pan Parlor, Krishna Nagar, Ahmedabad, Gujarat 382350
+             B434 Pushpak corner opp navyung school, nr kudrat residency, Parashuram Circle, naroda, Ahmedabad.
             </h3>
           </div>
 
@@ -307,31 +313,6 @@
       <!-- Review -->
       <!-- Reviews Section -->
       <section class="reviews-section" id="reviews">
-        <!-- Submit a Review -->
-        <div
-          class="heading"
-          style="display: flex; align-items: center; justify-content: center"
-        >
-          <h2 style="font-size: 2rem; color: #054a88">Leave Your Feedback</h2>
-        </div>
-        <form id="review-form" style="padding: 0 10px">
-          <input type="text" id="name" placeholder="Your Name" required />
-          <textarea
-            id="review"
-            placeholder="Your Review"
-            rows="3"
-            required
-          ></textarea>
-          <select id="rating" required>
-            <option value="">Rating</option>
-            <option value="5">⭐⭐⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐</option>
-            <option value="3">⭐⭐⭐</option>
-            <option value="2">⭐⭐</option>
-            <option value="1">⭐</option>
-          </select>
-          <button type="submit">Submit Review</button>
-        </form>
         <div
           class="heading"
           style="display: flex; align-items: center; justify-content: center"
@@ -342,9 +323,10 @@
         </div>
         <!-- Review Slider -->
         <div class="reviews-slider" id="reviews-container">
-          <!-- JS will inject cards here -->
+          <!-- JS will inject review cards -->
         </div>
       </section>
+
       <!-- Footer -->
       <footer
         style="
@@ -502,7 +484,7 @@
             background-color: #fff;
             padding: 0.7rem 0.7rem;
             color: #054a88;
-         
+
             border-radius: 30px;
             font-size: 1rem;
           "
@@ -522,7 +504,7 @@
         </div>
       </footer>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
     <script type="module" src="script.js" defer></script>
   </body>
 </html>

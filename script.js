@@ -1,4 +1,6 @@
-// Hamburger
+// ------------------
+// Hamburger Menu
+// ------------------
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 const overlay = document.getElementById("overlay");
@@ -14,124 +16,120 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("show");
   hamburger.classList.remove("active");
 });
-// Scroll effect 
 
-  window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 20) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+// ------------------
+// Scroll effect for navbar
+// ------------------
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 20) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// ------------------
+// Counter Animation
+// ------------------
+const counters = document.querySelectorAll(".counter");
+
+const animateCounters = () => {
+  counters.forEach((counter) => {
+    counter.innerText = "0";
+    const target = +counter.getAttribute("data-target");
+    const speed = +counter.getAttribute("data-speed") || 20;
+
+    const updateCount = () => {
+      const count = +counter.innerText;
+      const increment = Math.ceil(target / 100);
+
+      if (count < target) {
+        counter.innerText =
+          count + increment > target ? target : count + increment;
+        setTimeout(updateCount, speed);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
   });
+};
 
-// Animation 
-
-const counters = document.querySelectorAll('.counter');
-
-  const animateCounters = () => {
-    counters.forEach(counter => {
-      counter.innerText = '0';
-      const target = +counter.getAttribute('data-target');
-      const speed = +counter.getAttribute('data-speed') || 20;
-
-      const updateCount = () => {
-        const count = +counter.innerText;
-        const increment = Math.ceil(target / 100);
-
-        if (count < target) {
-          counter.innerText = count + increment > target ? target : count + increment;
-          setTimeout(updateCount, speed);
-        } else {
-          counter.innerText = target;
-        }
-      };
-
-      updateCount();
-    });
-  };
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         animateCounters();
       }
     });
-  }, {
-    threshold: 0.5
-  });
+  },
+  {
+    threshold: 0.5,
+  }
+);
 
-  const aboutSection = document.querySelector('.about-section');
-  observer.observe(aboutSection);
-// Initialize Supabase
+const aboutSection = document.querySelector(".about-section");
+observer.observe(aboutSection);
 
-
-import { getReviews, submitReview } from './review.js';
+// ------------------
+// Client Reviews (static)
+// ------------------
+const reviews = [
+  {
+    name: "Kirankumar Gadagi",
+    review: "Awesome experience and good experience ervey type of loans and mostly service of documents sefty.. Good work 🙏🙏🙏",
+    rating: 4,
+    time: "10 Aug 2025, 2:30 PM",
+  },
+  {
+    name: "Neelam Gulabani",
+    review: "Good person and work is also good i am loan apply and immediately loan process. All service are so good....pls visit any loan required pls contact him",
+    rating: 4,
+    time: "9 July 2025, 5:15 PM",
+  },
+  {
+    name: "Kesharsingh Rathore",
+    review: "good work and full support mr vijay bhai",
+    rating: 5,
+    time: "5 Aug 2025, 11:45 AM",
+  },
+  {
+    name: "Vijay Singh",
+    review: "Good work and better behaviour nv finance salutuon",
+    rating: 3,
+    time: "7 Sept 2025, 6:00 PM",
+  },
+];
 
 const container = document.getElementById("reviews-container");
-const form = document.getElementById("review-form");
 
-async function loadReviews() {
+function loadReviews() {
   container.innerHTML = "";
-  try {
-    const data = await getReviews();
-    data.forEach((review) => {
-      const card = document.createElement("div");
-      card.className = "review-card";
-
-      const reviewDate = new Date(review.created_at);
-      const formattedDate = reviewDate.toLocaleDateString('en-GB', {
-        day: '2-digit', month: 'long', year: 'numeric'
-      });
-      const formattedTime = reviewDate.toLocaleTimeString('en-GB', {
-        hour: '2-digit', minute: '2-digit', hour12: true
-      });
-
-      card.innerHTML = `
-        <h4>${review.name}</h4>
-        <div class="rating">${"⭐".repeat(review.rating)}</div>
-        <p>${review.review}</p>
-        <span class="review-date">${formattedDate}, ${formattedTime}</span>
-      `;
-
-      container.appendChild(card);
-    });
-  } catch (error) {
-    console.error("Error loading reviews:", error);
-  }
+  reviews.forEach((review) => {
+    const card = document.createElement("div");
+    card.className = "review-card";
+    card.innerHTML = `
+      <h4>${review.name}</h4>
+      <div class="rating">${"⭐".repeat(review.rating)}</div>
+      <p>${review.review}</p>
+      <span class="review-date">${review.time}</span>
+    `;
+    container.appendChild(card);
+  });
 }
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const review = document.getElementById("review").value.trim();
-  const rating = parseInt(document.getElementById("rating").value);
-
-  if (!name || !review || !rating) {
-    alert("All fields are required!");
-    return;
-  }
-
-  try {
-    await submitReview(name, review, rating);
-    form.reset();
-    loadReviews();
-  } catch (error) {
-    console.error("Submit error:", error);
-    alert("Failed to submit review.");
-  }
-});
-
-window.onload = loadReviews;
-
+// ------------------
+// Loader + Init
+// ------------------
 window.onload = () => {
   let percentage = 0;
-  const loader = document.getElementById('loader');
-  const percentageText = document.getElementById('percentage');
-  
+  const loader = document.getElementById("loader");
+  const percentageText = document.getElementById("percentage");
+
   // Show loader
-  loader.style.display = 'flex';
+  loader.style.display = "flex";
 
   // Increase percentage from 0 to 100
   const interval = setInterval(() => {
@@ -141,13 +139,13 @@ window.onload = () => {
     if (percentage >= 100) {
       clearInterval(interval);
       setTimeout(() => {
-        loader.style.opacity = '0';
+        loader.style.opacity = "0";
         setTimeout(() => {
-          loader.style.display = 'none';
-        }, 1000); // Delay the removal after fade
-      }, 500); // After reaching 100%, wait before fading out
+          loader.style.display = "none";
+          // ✅ Load reviews AFTER loader finishes
+          loadReviews();
+        }, 1000);
+      }, 500);
     }
   }, 30); // Controls the speed of the loader
 };
-
-
