@@ -1,510 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NV Finance Solution</title>
-    <meta name="description" content="Get loans, investments, and financial solutions from NV Finance Solution in Ahmedabad. Trusted experts with transparent services.">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="/assets/images/logo.jpg" type="image/x-icon" />
-  </head>
-  <body>
-    <div id="loader" class="loader">
-      <h1>NV Finance Solution</h1>
-      <p>Your dream finance partner.</p>
-      <div id="progress-container">
-        <span id="percentage">0%</span>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NV Finance Solution | Trusted Financial Experts in Ahmedabad</title>
+  <meta name="description"
+    content="Get professional loans, investments, and tax-filing solutions from NV Finance Solution. Trusted experts in Ahmedabad with transparent, fast services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/images/logo.jpg" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <h1>NV Finance Solution</h1>
+    <p>Your dream finance partner.</p>
+    <div id="progress-container">
+      <div class="progress-bar"></div>
     </div>
+    <span id="percentage">0%</span>
+  </div>
 
-    <main>
-      <!-- Navbar -->
-      <header>
-        <nav class="navbar">
-          <div
-            class="nleft"
-            style="display: flex; align-items: center; gap: 10px"
-          >
-            <img
-              style="width: 40px; width: 40px; border-radius: 50%"
-              src="assets/images/logo.jpg"
-              alt=""
-            />
-            <h1 class="logo" style="font-weight: 300; font-size: 1.2rem">
-              NV Finance Solution
-            </h1>
-          </div>
-          <!-- <button id="theme-toggle-btn">🌓 Toggle Theme</button> -->
+  <!-- Header -->
+  <header id="mainHeader">
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/images/logo.jpg" alt="NV Finance Logo" class="logo-img" />
+        <span class="logo-text">NV Finance Solution</span>
+      </div>
 
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="overlay" id="overlay"></div>
-      </header>
-      <!-- Hero Page -->
-      <div class="hero" id="home">
-        <div class="hero-content">
-          <h1>NV Finance Solution</h1>
-          <h2 style="color: #054a88; text-align: center">
-            Your dream finance partner<img
-              style="width: 30px; height: 30px"
-              src="assets/images/diamond-thin-plus-shape.svg"
-              alt=""
-            />
-          </h2>
-          <h3>Trusted experts in loans, investments & financial planning.</h3>
-          <div class="btn">
-            <button><a href="#service">Know Our Services</a></button>
-            <button><a href="#contact">Contact</a></button>
-          </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-          <div class="hero-img">
-            <img
-              src="assets/images/istockphoto-1214054918-612x612-removebg-preview.png"
-              alt=""
-            />
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#service">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Awwwards Hero Upgrade -->
+    <section class="hero-kinetic" id="home">
+      <div class="mesh-bg"></div>
+      <div class="container hero-kinetic-content">
+        <div class="hero-kinetic-text">
+          <div class="reveal-mask">
+            <h2 class="hero-stagger">Elite Financial Solutions & Planning</h2>
+          </div>
+          <div class="reveal-mask">
+            <h1 class="hero-stagger">NV Finance</h1>
+          </div>
+          <div class="reveal-mask">
+            <h1 class="hero-stagger text-primary"><span>Solution</span></h1>
+          </div>
+          <div class="reveal-mask">
+            <p class="hero-stagger">We craft bespoke financial strategies that empower your dreams and secure your
+              family's future. Modern loans, strategic tax planning, and growth-first mindset.</p>
+          </div>
+          <div class="hero-btns-staggered hero-stagger">
+            <a href="#service" class="btn btn-primary btn-xl-nav btn-magnetic">
+              <span class="btn-text">View My Solutions</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-kinetic-visual">
+          <div class="hero-aura"></div>
+          <div class="reveal-mask-image reveal-mask-monolith">
+            <img src="assets/images/istockphoto-1214054918-612x612-removebg-preview.png"
+              alt="NV Finance Core Illustration" class="hero-anchor-img hero-perspective">
           </div>
         </div>
       </div>
-      <!-- Service -->
+    </section>
 
-      <section class="services-section" id="service">
-        <h5
-          class="section-title"
-          style="font-size: 2rem; margin-bottom: 2rem; color: #054a88"
-        >
-          💰Our Services
-        </h5>
-        <div class="services-container">
-          <div class="service-card">
-            <div class="moving-dot"></div>
-            <!-- Add the moving dot here -->
-            <img
-              src="assets/images/home-loan_2024-11-26-08-56-07-069.svg"
-              alt="Home Loan"
-            />
+    <!-- Services Section -->
+    <section class="services-section" id="service">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>💰 Our Premium Services</h2>
+          <p>From individual growth to business expansion, we offer a wide range of financial solutions tailored for
+            you.</p>
+        </div>
+
+        <!-- Loan Services -->
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <img src="assets/images/home-loan_2024-11-26-08-56-07-069.svg" alt="Home Loan" />
+            </div>
             <h3>Home Loan</h3>
-            <p>
-              Affordable home loans with low interest rates and fast approval.
-            </p>
-            <button><a href="#contact">Contact us</a></button>
+            <p>Turn your dream of owning a home into reality with our low-interest, fast-approval home loans.</p>
+            <a href="#contact" class="service-btn">Enquire Now →</a>
           </div>
 
-          <div class="service-card">
-            <div class="moving-dot"></div>
-            <!-- Add the moving dot here -->
-            <img
-              src="assets/images/personal-loan_2024-11-26-08-20-13-195.svg"
-              alt="Personal loan"
-            />
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <img src="assets/images/personal-loan_2024-11-26-08-20-13-195.svg" alt="Personal Loan" />
+            </div>
             <h3>Personal Loan</h3>
-            <p>
-              Quick and hassle-free personal loans to meet your urgent financial
-              needs.
-            </p>
-            <button><a href="#contact">Contact us</a></button>
+            <p>Quick and hassle-free personal loans to meet your urgent financial needs without any stress.</p>
+            <a href="#contact" class="service-btn">Enquire Now →</a>
           </div>
 
-          <div
-            class="service-card"
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              flex-direction: column;
-            "
-          >
-            <div class="moving-dot"></div>
-            <!-- Add the moving dot here -->
-            <img
-              src="assets/images/secured-business-loan_2024-11-26-08-22-18-993.svg"
-              alt="ITR Filing"
-            />
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <img src="assets/images/secured-business-loan_2024-11-26-08-22-18-993.svg" alt="Business Loan" />
+            </div>
             <h3>Business Loan</h3>
-            <p>
-              Power your business with customized loan solutions tailored for
-              growth.
-            </p>
-            <button style="margin-top: 1rem">
-              <a href="#contact">Contact us</a>
-            </button>
+            <p>Power your business growth with customized loan solutions tailored for startups and enterprises.</p>
+            <a href="#contact" class="service-btn">Enquire Now →</a>
           </div>
 
-          <div class="service-card">
-            <div class="moving-dot"></div>
-            <!-- Add the moving dot here -->
-            <img
-              src="assets/images/loan-against-property_2024-11-26-08-21-10-273.svg"
-              alt="ITR Filing"
-            />
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <img src="assets/images/loan-against-property_2024-11-26-08-21-10-273.svg" alt="Mortgage Loan" />
+            </div>
             <h3>Mortgage Loan</h3>
-            <p>
-              Unlock the value of your property with our secure mortgage loan
-              plans.
-            </p>
-            <button><a href="#contact">Contact us</a></button>
+            <p>Unlock the hidden value of your property with our secure and flexible mortgage loan plans.</p>
+            <a href="#contact" class="service-btn">Enquire Now →</a>
           </div>
         </div>
-      </section>
 
-      <section class="services-section" id="service">
-        <h2
-          class="section-title"
-          style="font-size: 2rem; margin-bottom: 2rem; color: #054a88"
-        >
-          🧾Financial & Tax Services
-        </h2>
-        <div class="services-container">
-          <div class="service-card">
+        <!-- Tax & Accounting Services -->
+        <div class="section-header reveal" style="margin-top: 80px;">
+          <h2>🧾 Financial & Tax Solutions</h2>
+          <p>Expert accounting and compliance services to keep your business running smoothly.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
             <h3>GST Registration</h3>
-            <p>
-              Fast and reliable GST registration to get your business compliant.
-            </p>
-            <button><a href="#contact">Contact us</a></button>
+            <p>Fast and reliable GST registration to ensure your business stays compliant with the latest laws.</p>
+            <a href="#contact" class="service-btn">Contact Support →</a>
           </div>
 
-          <div class="service-card">
+          <div class="service-card reveal">
             <h3>GST Return</h3>
-            <p>
-              File your GST returns accurately and on time with expert support.
-            </p>
-            <button><a href="#contact">Contact us</a></button>
+            <p>File your GST returns accurately and on time with expert support and avoid penalties.</p>
+            <a href="#contact" class="service-btn">Contact Support →</a>
           </div>
 
-          <div class="service-card">
-            <h3>ITR Return</h3>
-            <p>
-              Hassle-free ITR filing with maximum benefits and minimum stress.
-            </p>
-            <button><a href="#contact">Contact us</a></button>
+          <div class="service-card reveal">
+            <h3>ITR Filing</h3>
+            <p>Hassle-free Income Tax Return filing with maximum benefits and minimum tax stress.</p>
+            <a href="#contact" class="service-btn">Contact Support →</a>
           </div>
-          <div class="service-card">
+
+          <div class="service-card reveal">
             <h3>TDS Return</h3>
-            <p>
-              File your TDS returns correctly and avoid penalties with our help.
-            </p>
-            <button><a href="#contact">Contact us</a></button>
+            <p>Professional TDS return filing to keep your records clear and avoid government notices.</p>
+            <a href="#contact" class="service-btn">Contact Support →</a>
           </div>
-          <div class="service-card">
-            <h3>Accounting Work</h3>
-            <p>
-              End-to-end accounting services to keep your finances clean and
-              compliant.
-            </p>
-            <button><a href="#contact">Contact us</a></button>
+
+          <div class="service-card reveal">
+            <h3>Accounting</h3>
+            <p>End-to-end accounting services to keep your financial health clean and compliant annually.</p>
+            <a href="#contact" class="service-btn">Contact Support →</a>
           </div>
         </div>
-      </section>
-      <!-- About -->
-      <section class="about-section" id="about">
-        <div class="about-content">
-          <h2 style="font-size: 3rem">About NV Finance Solution</h2>
-          <div class="about-wrapper">
-            <div class="founder-image">
-              <h1 style="color: #6e6e6e; font-size: 1.5rem">Owner -</h1>
-              <h1 style="color: #054a88; font-size: 1.5rem">Vijay Hedau</h1>
-            </div>
-            <p>
-              Founded with a vision to simplify finance, NV Finance has helped
-              thousands of individuals and businesses with trusted loan and tax
-              services. We believe in transparency, speed, and client
-              satisfaction.
-            </p>
+      </div>
+    </section>
 
-            <div class="counters">
-              <div class="counter-box">
-                <h3>
-                  <span class="counter" data-target="5000" data-speed="20"
-                    >0</span
-                  >+
-                </h3>
-                <p>Happy Clients</p>
-              </div>
-              <div class="counter-box">
-                <h3>
-                  <span class="counter" data-target="5" data-speed="100">0</span
-                  >+
-                </h3>
-                <p>Years of Experience</p>
-              </div>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container about-content">
+        <div class="about-img reveal">
+          <div class="founder-card">
+            <div class="founder-info">
+              <h4>Founder & CEO</h4>
+              <h3>Vijay Hedau</h3>
+            </div>
+            <p>"Our mission is to democratize expert financial advice and provide fast, transparent liquidity to
+              everyone who needs it."</p>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <h2>Building Trust Since 2020</h2>
+          <p>Founded with a vision to simplify finance, NV Finance has helped thousands of individuals and businesses
+            with trusted loan and tax services. We believe in transparency, speed, and client satisfaction above all
+            else.</p>
+
+          <div class="counters">
+            <div class="counter-box">
+              <h3 class="counter" data-target="5000" data-speed="20">0</h3>
+              <p>Happy Clients</p>
+            </div>
+            <div class="counter-box">
+              <h3 class="counter" data-target="5" data-speed="100">0</h3>
+              <p>Years Experience</p>
             </div>
           </div>
         </div>
-      </section>
-      <!-- Contact -->
-      <!-- Contact Section -->
-      <section id="contact">
-        <h2 style="color: #054a88; font-size: 3rem; margin-bottom: 1rem">
-          Get In Touch
-        </h2>
+      </div>
+    </section>
 
-        <div class="contact-container">
-          <!-- Animated Map -->
-          <div class="map-container">
-            <iframe
-              class="map"
-              src="https://www.google.com/maps?q=B434%20Pushpak%20corner%20opp%20navyung%20school,%20nr%20kudrat%20residency,%20Parashuram%20Circle,%20naroda,%20Ahmedabad&output=embed"
-              width="100%"
-              height="250"
-              style="border: 0"
-              allowfullscreen
-              loading="lazy"
-            >
-            </iframe>
-            <h3 style="font-size: 1rem; margin-top: 1rem">
-             B434 Pushpak corner opp navyung school, nr kudrat residency, Parashuram Circle, naroda, Ahmedabad.
-            </h3>
-          </div>
-
-          <!-- Contact Form -->
-          <h3 style="font-size: 2rem; color: #054a88">Contact form</h3>
-          <form
-            action="https://formsubmit.co/nvfinancesolution@gmail.com"
-            method="POST"
-          >
-            <!-- Replace YOUR_EMAIL with your actual email, like: nvfinancesolution@gmail.com -->
-            <h3
-              style="
-                background-color: #054a88;
-                color: #fff;
-                padding: 0.3rem;
-                border-radius: 30px;
-              "
-            >
-              Name
-            </h3>
-            <input type="text" name="name" placeholder="Your Name" required />
-            <h3
-              style="
-                background-color: #054a88;
-                color: #fff;
-                padding: 0.3rem;
-                border-radius: 30px;
-              "
-            >
-              Email
-            </h3>
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="Your Message"
-              required
-            ></textarea>
-
-            <button type="submit">Send Message</button>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container section-header reveal">
+        <h2>Get In Touch</h2>
+        <p>We're here to help you navigate your financial journey. Drop us a message or visit our office.</p>
+      </div>
+      <div class="container contact-container reveal">
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=B434%20Pushpak%20corner%20opp%20navyung%20school,%20nr%20kudrat%20residency,%20Parashuram%20Circle,%20naroda,%20Ahmedabad&output=embed"
+            loading="lazy"></iframe>
+        </div>
+        <div class="contact-form-wrapper">
+          <h3>Send a Message</h3>
+          <form action="https://formsubmit.co/nvfinancesolution@gmail.com" method="POST">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Submit Inquiry</button>
           </form>
         </div>
-      </section>
-      <!-- Review -->
-      <!-- Reviews Section -->
-      <section class="reviews-section" id="reviews">
-        <div
-          class="heading"
-          style="display: flex; align-items: center; justify-content: center"
-        >
-          <h2 style="font-size: 2rem; color: #054a88; margin-top: 2rem">
-            What Our Clients Say
-          </h2>
-        </div>
-        <!-- Review Slider -->
-        <div class="reviews-slider" id="reviews-container">
-          <!-- JS will inject review cards -->
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Footer -->
-      <footer
-        style="
-          background-color: #054a88;
-          color: #fff;
-          padding: 40px 20px;
-          font-family: Arial, sans-serif;
-        "
-      >
-        <div
-          style="
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-          "
-        >
-          <!-- Company Info -->
-          <div style="flex: 1; min-width: 250px">
-            <h3 style="margin-bottom: 15px">NV Finance Solution</h3>
-            <p style="color: #ccc">
-              Empowering your financial future with home loans, mortgage loans,
-              personal loans, and business loans.
-            </p>
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+      <div class="container section-header reveal">
+        <h2>What Our Clients Say</h2>
+        <p>Real stories from people who trusted us with their financial future.</p>
+      </div>
+      <div class="container relative slider-wrapper">
+        <div class="reviews-viewport" id="reviews-viewport">
+          <div class="reviews-slider" id="reviews-container">
+            <!-- Injected by script.js -->
           </div>
+        </div>
 
-          <!-- Quick Links -->
-          <div style="flex: 1; min-width: 200px">
-            <h4 style="margin-bottom: 15px">Quick Links</h4>
-            <ul
-              style="
-                display: flex;
-                padding: 0;
-                color: #ccc;
-                gap: 5px;
-                flex-direction: column;
-                padding-left: 1rem;
-              "
-            >
-              <li>
-                <a href="#home" style="color: #ccc; text-decoration: none"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a href="#service" style="color: #ccc; text-decoration: none"
-                  >Services</a
-                >
-              </li>
-              <li>
-                <a href="#about" style="color: #ccc; text-decoration: none"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a href="#contact" style="color: #ccc; text-decoration: none"
-                  >Contact</a
-                >
-              </li>
+        <!-- Navigation Arrows -->
+        <button class="slider-btn prev-btn" id="prevBtn" aria-label="Previous Profile">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
+        </button>
+        <button class="slider-btn next-btn" id="nextBtn" aria-label="Next Profile">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+          </svg>
+        </button>
+
+        <!-- Pagination Dots -->
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-awwwards">
+
+
+      <div class="container footer-grid-refined">
+        <div class="footer-brand">
+          <div class="logo-container mb-20">
+            <img src="assets/images/logo.jpg" alt="NV Finance Logo" class="logo-img" />
+            <span class="logo-text text-white">NV Finance Solution</span>
+          </div>
+          <p>Your strategic partner in financial excellence. From loans to tax compliance, we bridge the gap between
+            your dreams and reality.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/918530107372" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"
+                width="24" height="24">
+                <path fill="currentColor"
+                  d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.33a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.23 8.25-8.23m-3.85 3.09c-.21 0-.46.03-.7.26-.28.28-1.07 1.05-1.07 2.56s1.1 2.98 1.25 3.18c.15.19 2.16 3.29 5.23 4.61.73.32 1.3.51 1.74.65.73.23 1.4.2 1.92.12.58-.08 1.81-.74 2.06-1.46.25-.71.25-1.32.18-1.46-.07-.14-.26-.21-.54-.35s-1.67-.82-1.92-.91-.44-.14-.63.14c-.19.28-.73.91-.89 1.09-.17.18-.34.21-.62.07s-1.17-.43-2.23-1.38c-.82-.74-1.37-1.64-1.53-1.92-.17-.28-.02-.44.12-.58s.28-.35.42-.52c.14-.17.18-.28.28-.46.09-.18.05-.34-.02-.48s-.63-1.52-.87-2.08c-.22-.55-.49-.47-.69-.47" />
+              </svg></a>
+            <a href="https://www.instagram.com/nvfinancesolution" target="_blank" aria-label="Instagram"><svg
+                viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor"
+                  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+              </svg></a>
+          </div>
+        </div>
+
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="#service">Home Loan</a></li>
+              <li><a href="#service">Business Loan</a></li>
+              <li><a href="#service">ITR Filing</a></li>
+              <li><a href="#service">GST Support</a></li>
             </ul>
           </div>
-
-          <!-- Contact Info -->
-          <div style="flex: 1; min-width: 250px">
-            <h4 style="margin-bottom: 15px">Contact Us</h4>
-            <p style="color: #ccc">
-              📍2nd Floor, Shakti Vijay Society, Nr Vijay Park Cross Road, Opp
-              Delux Pan Parlor, Krishna Nagar, Ahmedabad, Gujarat 382350
-            </p>
-            <p style="margin-top: 7px">
-              <a
-                href="tel:+918530107372"
-                style="color: #ccc; margin-top: 7px; text-decoration: none"
-              >
-                📞 +91 8530107372
-              </a>
-            </p>
-            <p style="margin-top: 7px">
-              <a
-                href="mailto:nvfinancesolution@gmail.com"
-                style="color: #ccc; margin-top: 70px; text-decoration: none"
-              >
-                📧 nvfinancesolution@gmail.com
-              </a>
-            </p>
-
-            <a
-              href="https://wa.me/918530107372"
-              target="_blank"
-              style="
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: #25d366;
-                color: white;
-                border-radius: 50%;
-                width: 60px;
-                height: 60px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-              "
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                alt="WhatsApp"
-                style="width: 30px; height: 30px"
-              />
-            </a>
-            <!-- Instagram Button -->
-            <a
-              href="https://www.instagram.com/nvfinancesolution?igsh=MXA0YWxzeDkyODl5eg=="
-              target="_blank"
-              style="
-                position: fixed;
-                bottom: 100px;
-                right: 20px;
-                background: linear-gradient(
-                  45deg,
-                  #f09433,
-                  #e6683c,
-                  #dc2743,
-                  #cc2366,
-                  #bc1888
-                );
-                color: white;
-                border-radius: 50%;
-                width: 60px;
-                height: 60px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-              "
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                alt="Instagram"
-                style="width: 30px; height: 30px"
-              />
-            </a>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#about">Our Story</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#reviews">Testimonials</a></li>
+            </ul>
           </div>
         </div>
 
-        <!-- Bottom Bar -->
-        <p
-          style="
-            margin-top: 1rem;
-            text-align: center;
-            background-color: #fff;
-            padding: 0.7rem 0.7rem;
-            color: #054a88;
-
-            border-radius: 30px;
-            font-size: 1rem;
-          "
-        >
-          Made by Paresh Shrivastava & Himanshu Sonkusre
-        </p>
-        <div
-          style="
-            margin-top: 30px;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #6e6e6e;
-            color: #ccc;
-          "
-        >
-          &copy; 2025 NV Finance Solution. All rights reserved.
+        <div class="footer-address">
+          <h4>Location</h4>
+          <p>2nd Floor, Shakti Vijay Society, Nr Vijay Park Cross Road, Opp Delux Pan Parlor, Krishna Nagar, Ahmedabad -
+            382350</p>
+          <div class="footer-contact-links mt-10">
+            <a href="tel:+918530107372" class="footer-contact-link">
+              <span>📞</span>
+              <span>+91 8530107372</span>
+            </a>
+            <a href="mailto:nvfinancesolution@gmail.com" class="footer-contact-link">
+              <span>📧</span>
+              <span>nvfinancesolution@gmail.com</span>
+            </a>
+          </div>
         </div>
-      </footer>
-    </main>
+      </div>
 
-    <script type="module" src="script.js" defer></script>
-  </body>
+      <div class="container footer-bottom-refined">
+        <div class="reveal-mask">
+          <p class="footer-stagger">&copy; 2025 NV Finance Solution. All Rights Reserved.</p>
+        </div>
+
+        <div class="reveal-mask credits-monolith">
+          <p class="footer-stagger">MADE BY <span class="text-white">PARESH SHRIVASTAVA</span> & <span
+              class="text-white">HIMANSHU SONKUSRE</span></p>
+        </div>
+
+        <div class="reveal-mask">
+          <a href="#" class="back-to-top footer-stagger" id="backToTop">BACK TO TOP ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Social -->
+    <div class="social-float">
+      <a href="https://wa.me/918530107372" target="_blank" class="social-btn whatsapp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
+      <a href="https://www.instagram.com/nvfinancesolution" target="_blank" class="social-btn instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
+    </div>
+  </main>
+
+  <script type="module" src="script.js" defer></script>
+</body>
+
 </html>
